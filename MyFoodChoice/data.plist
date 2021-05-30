@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>tasty</key>
+		<dict>
+			<key>green</key>
+			<integer>224</integer>
+			<key>blue</key>
+			<string>0</string>
+			<key>red</key>
+			<string>232</string>
+		</dict>
+		<key>numberOfTimes</key>
+		<integer>2</integer>
+		<key>lastEaten</key>
+		<date>2021-04-20T11:06:17Z</date>
+		<key>imageName</key>
+		<string>ramen.jpeg</string>
+		<key>food</key>
+		<string>Ramen</string>
+		<key>type</key>
+		<string>Ramen</string>
+		<key>myChoice</key>
+		<false/>
+		<key>rating</key>
+		<integer>5</integer>
+	</dict>
+	<dict>
+		<key>tasty</key>
+		<dict>
+			<key>green</key>
+			<integer>31</integer>
+			<key>blue</key>
+			<string>0</string>
+			<key>red</key>
+			<string>232</string>
+		</dict>
+		<key>lastEaten</key>
+		<date>2021-05-20T11:10:47Z</date>
+		<key>numberOfTimes</key>
+		<integer>10</integer>
+		<key>rating</key>
+		<integer>4</integer>
+		<key>myChoice</key>
+		<false/>
+		<key>type</key>
+		<string>Burger</string>
+		<key>food</key>
+		<string>Burger</string>
+		<key>imageName</key>
+		<string>burger.jpeg</string>
+	</dict>
+	<dict/>
+	<dict/>
+	<dict/>
+</array>
+</plist>

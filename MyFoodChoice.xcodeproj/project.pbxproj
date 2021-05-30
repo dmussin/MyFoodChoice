@@ -16,6 +16,7 @@
 		5C9A37FA266390C700D46F3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9A37F8266390C700D46F3D /* LaunchScreen.storyboard */; };
 		5C9A3805266390C700D46F3D /* MyFoodChoiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A3804266390C700D46F3D /* MyFoodChoiceTests.swift */; };
 		5C9A3810266390C700D46F3D /* MyFoodChoiceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A380F266390C700D46F3D /* MyFoodChoiceUITests.swift */; };
+		5C9A381E2663A77A00D46F3D /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C9A381D2663A77A00D46F3D /* data.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		5C9A380B266390C700D46F3D /* MyFoodChoiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyFoodChoiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9A380F266390C700D46F3D /* MyFoodChoiceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFoodChoiceUITests.swift; sourceTree = "<group>"; };
 		5C9A3811266390C700D46F3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C9A381D2663A77A00D46F3D /* data.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				5C9A37EA266390BF00D46F3D /* AppDelegate.swift */,
 				5C9A37EC266390C000D46F3D /* SceneDelegate.swift */,
 				5C9A37EE266390C000D46F3D /* ViewController.swift */,
+				5C9A381D2663A77A00D46F3D /* data.plist */,
 				5C9A37F0266390C000D46F3D /* Main.storyboard */,
 				5C9A37F6266390C700D46F3D /* Assets.xcassets */,
 				5C9A37F8266390C700D46F3D /* LaunchScreen.storyboard */,
@@ -236,6 +239,7 @@
 			files = (
 				5C9A37FA266390C700D46F3D /* LaunchScreen.storyboard in Resources */,
 				5C9A37F7266390C700D46F3D /* Assets.xcassets in Resources */,
+				5C9A381E2663A77A00D46F3D /* data.plist in Resources */,
 				5C9A37F2266390C000D46F3D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,7 +454,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = daniyar.mussin.MyFoodChoice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -469,7 +473,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = daniyar.mussin.MyFoodChoice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
