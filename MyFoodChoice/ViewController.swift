@@ -11,6 +11,7 @@ import CoreData
 class ViewController: UIViewController {
     
     var context: NSManagedObjectContext!
+    var selectedFood: Food! // var for viewdidload
     
     // Time formater
     lazy var dateFormater: DateFormatter = {
@@ -41,6 +42,83 @@ class ViewController: UIViewController {
     @IBAction func segmentedCtrlPressed(_ sender: Any) {
         
     }
+    @IBAction func rateButton(_ sender: Any) {
+        let alertController = UIAlertController(title: "Rate it", message: "Rate this food, please", preferredStyle: .alert)
+        let rateAction = UIAlertAction(title: "Rate", style: .default) { action in
+            if let text = alertController.textFields?.first?.text { // getting text from alertcontroller
+                self.update(rating: (text as NSString).doubleValue)
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
+            
+        // adding text filed to controller
+        alertController.addTextField { textFiled in
+            textFiled.keyboardType = .numberPad
+        }
+  
+        // adding cancel and rate action and display on controller
+        alertController.addAction(rateAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func omnonomButton(_ sender: Any) {
+        selectedFood.numberOfTimes += 1
+        selectedFood.lastEaten = Date()
+        
+        do {
+            try context.save() // saving data
+            insertDataFrom(selectedFood: selectedFood) // inserting saved data to VC
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+    @IBAction func resetButton(_ sender: Any) {
+        let alertController = UIAlertController(title: "Warning", message: "Are you sure you want to reset it?", preferredStyle: .alert)
+        let reset = UIAlertAction(title: "Reset", style: .destructive) { action in
+        
+            // reseting numbers to 0 and data to current date
+            self.selectedFood.numberOfTimes = 0
+            self.selectedFood.lastEaten = Date()
+            self.selectedFood.rating = 0 
+        
+            // saving changes to the context
+        do {
+            try self.context.save()
+            self.insertDataFrom(selectedFood: self.selectedFood)
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        // displaying the alertController
+        alertController.addAction(cancel)
+        alertController.addAction(reset)
+        present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    // Method for rating
+    private func update(rating: Double) {
+        // getting access to var selectedfood
+        selectedFood.rating = rating // setting new value
+        // saving the value
+        do {
+            try context.save()
+            insertDataFrom(selectedFood: selectedFood)
+        } catch let error as NSError { // Error alertController
+            let alertController = UIAlertController(title: "Wrong value", message: "Wrong input data", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .default)
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
+            print(error.localizedDescription)
+        }
+        
+    }
     
     // Method for inserting data from dictionary to Interface
     private func insertDataFrom(selectedFood food: Food) {
@@ -54,7 +132,7 @@ class ViewController: UIViewController {
         lastEatenLabel.text = "Last time eaten: \(dateFormater.string(from: food.lastEaten!))"
         
         // segment
-        segmentedControl.tintColor = food.tintColor as? UIColor
+       // segmentedControl.tintColor = food.tintColor as? UIColor
     }
     
     // Method for extracting data from file
@@ -141,7 +219,7 @@ class ViewController: UIViewController {
         
         do{
             let results = try context.fetch(fetchRequest)
-            let selectedFood = results.first
+            selectedFood = results.first
             insertDataFrom(selectedFood: selectedFood!)
         } catch let error as NSError {
             print(error.localizedDescription)

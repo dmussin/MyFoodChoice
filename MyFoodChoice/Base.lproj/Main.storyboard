@@ -23,11 +23,14 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Fx-e6-fF4">
-                                <rect key="frame" x="258" y="778" width="112" height="32"/>
+                                <rect key="frame" x="259" y="778" width="111" height="32"/>
                                 <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="16"/>
                                 <state key="normal" title="Rate" backgroundImage="button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="rateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wIo-MR-k6S"/>
+                                </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="z17-jY-sP9">
                                 <rect key="frame" x="0.0" y="576" width="390" height="32"/>
@@ -53,6 +56,9 @@
                                 <state key="normal" title="Omnonom" backgroundImage="button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="omnonomButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nvB-Bc-6ty"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lU2-EV-MT1">
                                 <rect key="frame" x="7" y="438" width="141" height="103"/>
@@ -87,13 +93,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🍔" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jh0-dY-3yY">
-                                <rect key="frame" x="258" y="387" width="112" height="41"/>
+                                <rect key="frame" x="259" y="387" width="111" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="dyH-mB-OVB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="33"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBS-Sd-VTL">
+                                <rect key="frame" x="292" y="470" width="45" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="Kcy-c3-2G6"/>
+                                    <constraint firstAttribute="width" constant="45" id="mS4-9w-CDN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="❌"/>
+                                <connections>
+                                    <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="inU-pq-xgn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
@@ -103,6 +121,7 @@
                             <constraint firstItem="Jh0-dY-3yY" firstAttribute="leading" secondItem="9Fx-e6-fF4" secondAttribute="leading" id="7Bw-4f-y8D"/>
                             <constraint firstItem="lU2-EV-MT1" firstAttribute="top" secondItem="c4B-Y7-u1U" secondAttribute="bottom" constant="17.333333333333314" id="8Jf-cL-AGb"/>
                             <constraint firstItem="c4B-Y7-u1U" firstAttribute="top" secondItem="1oI-LL-Whd" secondAttribute="bottom" constant="20" id="BbI-e5-Eo6"/>
+                            <constraint firstItem="HBS-Sd-VTL" firstAttribute="centerX" secondItem="Jh0-dY-3yY" secondAttribute="centerX" id="Byz-0n-L5r"/>
                             <constraint firstItem="c4B-Y7-u1U" firstAttribute="leading" secondItem="lU2-EV-MT1" secondAttribute="leading" id="Fbm-mu-4Jf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jh0-dY-3yY" secondAttribute="trailing" constant="20" id="LTg-EO-LiF"/>
                             <constraint firstItem="1oI-LL-Whd" firstAttribute="leading" secondItem="z17-jY-sP9" secondAttribute="leading" id="PJo-4D-znC"/>
@@ -114,8 +133,10 @@
                             <constraint firstItem="c4B-Y7-u1U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="7" id="cS6-kb-R4T"/>
                             <constraint firstItem="1oI-LL-Whd" firstAttribute="trailing" secondItem="z17-jY-sP9" secondAttribute="trailing" id="hcZ-rT-iCQ"/>
                             <constraint firstItem="0Gd-Px-1BM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jJu-XZ-KCW"/>
+                            <constraint firstItem="HBS-Sd-VTL" firstAttribute="centerY" secondItem="lU2-EV-MT1" secondAttribute="centerY" id="oDP-1N-W78"/>
                             <constraint firstItem="c4B-Y7-u1U" firstAttribute="top" secondItem="Jh0-dY-3yY" secondAttribute="top" id="stA-6M-oVI"/>
                             <constraint firstItem="1oI-LL-Whd" firstAttribute="centerX" secondItem="u0c-HO-4Vq" secondAttribute="centerX" id="tHR-ZZ-dWy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HBS-Sd-VTL" secondAttribute="trailing" constant="53" id="tS1-zY-d0D"/>
                             <constraint firstItem="0Gd-Px-1BM" firstAttribute="baseline" secondItem="9Fx-e6-fF4" secondAttribute="baseline" id="uSd-3E-y3h"/>
                             <constraint firstItem="u0c-HO-4Vq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="136" id="y29-dz-nqN"/>
                         </constraints>
